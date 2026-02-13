@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💌 Para ti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+    <div class="envelope" onclick="openEnvelope()">
+        <div class="flap"></div>
+    </div>
+
+    <div class="question hidden" id="questionBox">
+        <h2>¿Quieres ser mi San Valentín? ❤️</h2>
+        <div class="buttons">
+            <button class="yes" onclick="yesAnswer()">Sí 💕</button>
+            <button class="no" id="noBtn">No 💔</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function openEnvelope() {
+    document.querySelector(".envelope").classList.add("open");
+    setTimeout(() => {
+        document.getElementById("questionBox").classList.remove("hidden");
+    }, 800);
+}
+
+function yesAnswer() {
+    document.getElementById("questionBox").innerHTML = `
+        <h2>Sabía que dirías que sí 😌❤️</h2>
+        <button class="follow" onclick="window.location.href='recuerdos.html'">
+            Sígueme preciosa 😛
+        </button>
+    `;
+}
+
+
+// botón NO que se mueve
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * 300 - 150;
+    const y = Math.random() * 200 - 100;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
+</script>
+
+</body>
+</html>
