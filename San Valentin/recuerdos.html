@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Recuerditos 💕</title>
+    <link rel="stylesheet" href="recuerdos.css">
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<header>
+    <img src="r1.jpg">
+    <img src="r2.jpg">
+
+    <h1>Recuerditos 💕</h1>
+
+    <img src="r3.jpg">
+    <img src="r4.jpg">
+</header>
+
+<section class="gallery" id="gallery">
+    <img src="r1.jpg">
+    <img src="r2.jpg">
+    <img src="r3.jpg">
+    <img src="r4.jpg">
+    <img src="r5.jpg">
+    <img src="r6.jpg">
+    <img src="r7.jpg">
+    <img src="r8.jpg">
+    <img src="r9.jpg">
+    <img src="r10.jpg">
+    <img src="r11.jpg">
+    <img src="r12.jpg">
+    <img src="r13.jpg">
+    <img src="r14.jpg">
+    <img src="r15.jpg">
+    <img src="r16.jpg">
+    <img src="r17.jpg">
+    <img src="r18.jpg">
+</section>
+
+<!-- 🎵 Música -->
+<audio id="music" src="musica.mp3" loop></audio>
+
+<script>
+window.addEventListener("load", function() {
+
+    // 🎵 Música
+    const music = document.getElementById("music");
+    music.play().catch(() => {});
+
+    // 🎲 Elegir imagen al azar
+    const images = document.querySelectorAll(".gallery img");
+    const randomIndex = Math.floor(Math.random() * images.length);
+
+    images[randomIndex].addEventListener("click", function() {
+        window.location.href = "distancia.html";
+    });
+
+});
+</script>
+
+</body>
+</html>
